@@ -1,13 +1,16 @@
 #pragma once
-
 #include <vector>
-using namespace std;
-
-#include "Celda.hpp"
+#include "Pieza.hpp"
 
 class Tablero {
-private:
 public:
+    static const int ANCHO = 10;
+    static const int ALTO = 20;
+    std::vector<std::vector<int>> matriz;
+
+    Tablero();
+    bool colision(const Pieza& pieza) const;
+    void fijarPieza(const Pieza& pieza);
     void limpiarLineas();
-    void agregarPieza();
+    void dibujar() const;
 };
